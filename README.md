@@ -47,6 +47,26 @@ Go to your browser and type:
 > 127.0.0.1:8080
 ```
 
+## Running the chatbot in a lightweight docker container for simpler hosting
+*Additionally assumes you are running on Linux, that docker and docker-compose are installed, and you have completed Step 1 above to clone the repository.*
+
+
+**1. Compile the chatbot with static binaries so the executable will be fully self contained:**
+```bash
+> CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server .
+```
+
+**2. Build the Docker container:**
+```bash
+> docker build -t eliza-go .
+```
+
+**3. Use docker-compose to serve the container**
+I chose a non-standard port, you may chose 8080 or anything else you like. 
+Note that the web server does depend on the web directory being available (otherwise you will get 404 no file)
+You can see it mounted under volumes:
+
+
 ## Design Components
 
 The primary design components that went into this project were as follows, a web server to serve a HTML as the root, Javascript to get the user input with ajax and finally all functionality and responses are contained in the eliza package.
