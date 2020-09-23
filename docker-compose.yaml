@@ -1,0 +1,14 @@
+version: "2.4"
+
+services:
+  eliza-go:
+    container_name: eliza-go
+    mem_limit: 100MB
+    image: eliza-go:latest
+    ports:
+    - "35492:8080"
+
+    volumes:
+    - "./web:/web"
+
+    restart: unless-stopped

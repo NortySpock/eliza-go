@@ -21,10 +21,12 @@ func inputhandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// Adapted from https://ianmcloughlin.github.io
 	// Serves the web file
+        fmt.Print("Starting up eliza...")
 	fs := http.FileServer(http.Dir("web"))
 	http.Handle("/", fs)
 
 	// Handles the user input and return of Eliza's answers
 	http.HandleFunc("/user-input", inputhandler)
 	http.ListenAndServe(":8080", nil)
+        fmt.Print("Shutting down eliza...")
 }
