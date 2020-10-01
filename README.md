@@ -1,7 +1,7 @@
 # Eliza-Go
 
 ## Original Author: Matthew Shiel 
-## Modified by David Norton
+## Modified (Dockerized) by David Norton
 
 
 
