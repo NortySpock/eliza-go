@@ -3,7 +3,7 @@ version: "2.4"
 services:
   eliza-go:
     container_name: eliza-go
-    mem_limit: 100MB
+    mem_limit: 100m
     image: eliza-go:latest
     ports:
     - "35492:8080"
